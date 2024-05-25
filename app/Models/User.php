@@ -61,10 +61,10 @@ class User extends Authenticatable
         return $this->attributes['email_verified_at'] == null ? null:date('d-m-Y H:i', strtotime($this->attributes['email_verified_at']));
     }
 
-    // public function getPermissionArray()
-    // {
-    //     return $this->getAllPermissions()->mapWithKeys(function ($pr) {
-    //         return [$pr['name'] => true];
-    //     });
-    // }
+    public function getPermissionArray()
+    {
+        return $this->getAllPermissions()->mapWithKeys(function ($pr) {
+            return [$pr['name'] => true];
+        });
+    }
 }

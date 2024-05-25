@@ -10,6 +10,7 @@ const toggleDark = useToggle(isDark);
 watchEffect(() => {
     if (isDark.value === true) {
         isDarkChecked.value = true;
+        localStorage.setItem('data-theme', 'dark');
     }
 });
 

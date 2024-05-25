@@ -1,8 +1,18 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import { Link } from '@inertiajs/vue3';
+import { useDark } from '@vueuse/core';
+import { watchEffect } from 'vue';
 
 const year = new Date().getFullYear();
+
+const isDark = useDark();
+
+watchEffect(() => {
+    if (isDark.value == true) {
+        localStorage.setItem('data-theme', 'dark');
+    }
+});
 </script>
 
 <template>
@@ -11,13 +21,13 @@ const year = new Date().getFullYear();
             <div class="w-full max-w-full px-3 flex-0">
                 <!-- Navbar -->
                 <nav
-                    class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 m-6 mb-0 shadow-sm rounded-xl bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start"
+                    class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 m-6 mb-0 shadow-sm rounded-xl bg-white/80 dark:bg-slate-750/70 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start"
                 >
                     <div
                         class="flex items-center justify-between w-full p-0 px-6 mx-auto flex-wrap-inherit"
                     >
                         <Link
-                            class="py-1.75 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0"
+                            class="py-1.75 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 dark:text-slate-100 lg:ml-0"
                             :href="route('dashboard')"
                             target="_blank"
                         >
@@ -57,7 +67,7 @@ const year = new Date().getFullYear();
                             >
                                 <li>
                                     <Link
-                                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2"
+                                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 dark:text-slate-100 lg:px-2"
                                         aria-current="page"
                                         :href="route('dashboard')"
                                     >
@@ -69,7 +79,7 @@ const year = new Date().getFullYear();
                                 </li>
                                 <li>
                                     <Link
-                                        class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2"
+                                        class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 dark:text-slate-100 lg:px-2"
                                         :href="route('profile.edit')"
                                     >
                                         <i
@@ -80,7 +90,7 @@ const year = new Date().getFullYear();
                                 </li>
                                 <li>
                                     <Link
-                                        class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2"
+                                        class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 dark:text-slate-100 lg:px-2"
                                         :href="route('register')"
                                     >
                                         <i
@@ -91,7 +101,7 @@ const year = new Date().getFullYear();
                                 </li>
                                 <li>
                                     <Link
-                                        class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2"
+                                        class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 dark:text-slate-100 lg:px-2"
                                         :href="route('login')"
                                     >
                                         <i

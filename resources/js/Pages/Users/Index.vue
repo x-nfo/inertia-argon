@@ -112,7 +112,7 @@ const select = () => {
                                             class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"
                                         >
                                             <Checkbox
-                                                class="p-2"
+                                                class="p-2 dark:border-slate-400"
                                                 v-model:checked="
                                                     data.isMultiple
                                                 "
@@ -261,16 +261,7 @@ const select = () => {
                                             class="p-2 align-middle bg-transparent whitespace-nowrap shadow-transparent text-sm"
                                         >
                                             <p
-                                                class="mb-0 text-xs py-1.5 px-2 text-white font-semibold leading-tight dark:text-white dark:opacity-80 rounded-lg"
-                                                :class="[
-                                                    user.roles[0].name ==
-                                                    'superadmin'
-                                                        ? 'bg-emerald-400 '
-                                                        : user.roles[0].name ==
-                                                          'admin'
-                                                        ? 'bg-orange-300'
-                                                        : 'bg-slate-200',
-                                                ]"
+                                                class="mb-0 text-xs py-1.5 px-2 text-slate-600 font-semibold leading-tight dark:text-white dark:opacity-80 rounded-lg"
                                             >
                                                 {{
                                                     user.roles.length == 0

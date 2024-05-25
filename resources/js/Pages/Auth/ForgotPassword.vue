@@ -26,7 +26,7 @@ const submit = () => {
         <Head title="Forgot Password" />
 
         <div class="mb-4 text-sm text-gray-600">
-            <h4 class="font-bold">Forgot Password</h4>
+            <h4 class="font-bold dark:text-slate-50">Forgot Password</h4>
             <p class="mb-0">
                 Forgot your password? No problem. Just let us know your email
                 address and we will email you a password reset link that will

@@ -34,7 +34,7 @@ const submit = () => {
         <Head title="Log in" />
 
         <div class="p-6 pb-0 mb-0">
-            <h4 class="font-bold">Sign In</h4>
+            <h4 class="font-bold dark:text-slate-50">Sign In</h4>
             <p class="mb-0">Enter your email and password to sign in</p>
         </div>
 

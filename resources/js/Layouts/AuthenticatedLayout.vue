@@ -6,6 +6,7 @@ import Header from '@/Components/DashboardHeader.vue';
 import Footer from '@/Components/DashboardFooter.vue';
 import Configurator from '@/Components/DashboardConfigurator.vue';
 import Swal from 'sweetalert2';
+import { onClickOutside } from '@vueuse/core';
 
 //Mobile Sidebar
 const isActive = ref(false);
@@ -14,10 +15,13 @@ const handleMobileSidebar = () => {
 };
 
 //Argon Configurator
+const configurator = ref(null);
 const isConfiguratorActive = ref(false);
 const handleConfigurator = () => {
     isConfiguratorActive.value = !isConfiguratorActive.value;
 };
+
+onClickOutside(configurator, (event) => (isConfiguratorActive.value = false));
 
 // Flash Messages
 watchEffect(() => {
@@ -72,7 +76,7 @@ watchEffect(() => {
     <Sidebar v-model:isMobileSidebar="isActive" />
 
     <main
-        class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl"
+        class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl dark:bg-slate-900"
     >
         <Header
             @toggleMobileSidebar="handleMobileSidebar"
@@ -91,7 +95,10 @@ watchEffect(() => {
 
     <!-- Argon Configurator -->
 
-    <!-- <Configurator v-model:isConfiguratorActive="isConfiguratorActive" /> -->
+    <Configurator
+        ref="configurator"
+        v-model:isConfiguratorActive="isConfiguratorActive"
+    />
 
     <!-- End Argon Configurator-->
 </template>

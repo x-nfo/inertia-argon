@@ -25,7 +25,7 @@ const submit = () => {
         <Head title="Register" />
 
         <div class="p-6 pb-0 mb-0">
-            <h4 class="font-bold">Sign Up</h4>
+            <h4 class="font-bold dark:text-slate-50">Sign Up</h4>
             <p class="mb-0">Enter your email and password to register</p>
         </div>
 

@@ -43,7 +43,7 @@ watchEffect(() => {
             {{ links.total }} entries
         </div>
         <div
-            class="flex flex-col items-center text-slate-300/65 space-y-2 mx-auto p-6 text-lg"
+            class="flex flex-col items-center space-y-2 mx-auto p-6 text-lg"
             v-if="links.data.length == 0"
         >
             <i class="fa fa-search"></i>
